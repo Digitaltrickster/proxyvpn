@@ -6,4 +6,4 @@ set -e
 
 /usr/sbin/openvpn --daemon --config /etc/openvpn/$vpnconfig
 sleep 5
-/usr/sbin/sockd -D -f /etc/danted.conf
+/usr/sbin/sockd -f /etc/danted.conf
