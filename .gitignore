@@ -1,0 +1,6 @@
+*.ovpn
+*.key
+*.crt
+*.p7b
+*.rar
+.DS_Store
