@@ -5,7 +5,7 @@ FROM alpine:latest
 
 ARG config=
 ENV vpnconfig=$config
-ARG localport=
+ARG localport=1080
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk update && \
@@ -17,6 +17,6 @@ COPY danted.conf /etc/
 COPY vpn/$config /etc/openvpn/
 COPY entry.sh /
 
-EXPOSE 127.0.0.1:$localport:$localport
+EXPOSE 127.0.0.1:$localport:1080
 
 ENTRYPOINT ["/entry.sh"]
