@@ -14,7 +14,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     apk add openvpn
 
 COPY danted.conf /etc/
-COPY vpn/$config /etc/openvpn/
+COPY vpn/* /etc/openvpn/
 COPY entry.sh /
 
 EXPOSE 127.0.0.1:$localport:1080
