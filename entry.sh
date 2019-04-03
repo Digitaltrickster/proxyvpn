@@ -5,5 +5,7 @@ set -e
 /bin/mknod /dev/net/tun c 10 200
 
 /usr/sbin/openvpn --daemon --config /etc/openvpn/$vpnconfig
-sleep 5
+while [[ `ip a show tun0 up` == *does not exist* ]];
+do
+done
 /usr/sbin/sockd -f /etc/danted.conf
